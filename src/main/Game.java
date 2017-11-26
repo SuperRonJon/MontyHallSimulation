@@ -23,8 +23,9 @@ public class Game {
 		finalChoice = -1;
 	}
 	
-	public void makeInitialChoice() {
+	public int makeInitialChoice() {
 		initialChoice = rand.nextInt(3);
+		return initialChoice;
 		
 	}
 	
@@ -38,12 +39,14 @@ public class Game {
 		}
 	}
 	
-	public void swapChoice() {
+	public int swapChoice() {
 		for(int i = 0; i < 3; i++) {
 			if(i != initialChoice && !(doors[i].isOpen())) {
 				finalChoice = i;
 			}
 		}
+		
+		return finalChoice;
 	}
 	
 	public boolean checkWin() {

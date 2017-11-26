@@ -22,5 +22,40 @@ public class GameTest {
 		}
 		assertTrue(prize);
 	}
+	
+	@Test
+	public void testMakeInitialChoice() {
+		Game game = new Game();
+		int max = 2;
+		int min = 0;
+		
+		int choice = game.makeInitialChoice();
+		
+		assertTrue(min <= choice && choice <= max);
+	}
+	
+	@Test
+	public void testSwapChoice() {
+		Game game = new Game();
+		int firstChoice = game.makeInitialChoice();
+		game.showEmptyDoor();
+		int finalChoice = game.swapChoice();
+		
+		assertFalse(firstChoice == finalChoice);
+		
+		Door[] doors = game.getDoors();
+		
+		boolean flag = true;
+		
+		for(int i = 0; i < 2; i ++) {
+			if(firstChoice == i && doors[i].isOpen()) {
+				flag = false;
+			}
+			else if(finalChoice == i && doors[i].isOpen())
+				flag = false;
+		}
+		
+		assertTrue(flag);
+	}
 
 }
