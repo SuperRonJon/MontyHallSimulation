@@ -41,9 +41,13 @@ public class Game {
 	public void swapChoice() {
 		for(int i = 0; i < 3; i++) {
 			if(i != initialChoice && !(doors[i].isOpen())) {
-				
+				finalChoice = i;
 			}
 		}
+	}
+	
+	public boolean checkWin() {
+		return doors[finalChoice].hasPrize();
 	}
 	
 	public Door[] getDoors() {
