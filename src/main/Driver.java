@@ -1,5 +1,6 @@
 package main;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Driver {
@@ -13,7 +14,12 @@ public class Driver {
 		Simulation sim = new Simulation(iterations);
 		sim.run();
 		sim.showStats();
-
+		System.out.println("\nPress ENTER to exit...");
+		try {
+			System.in.read();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
