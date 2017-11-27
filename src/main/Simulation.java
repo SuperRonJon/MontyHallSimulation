@@ -20,7 +20,7 @@ public class Simulation {
 			game.showEmptyDoor();
 			game.swapChoice();
 			if(game.checkWin()) {
-				wins++;			
+				wins++;	
 			}
 			else {
 				losses++;
