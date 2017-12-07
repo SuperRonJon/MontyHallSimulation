@@ -5,8 +5,8 @@ import java.util.Random;
 public class Game {
 	private Door[] doors;
 	private Random rand;
-	public int initialChoice;
-	public int finalChoice;
+	private int initialChoice;
+	private int finalChoice;
 	
 	public Game() {
 		doors = new Door[3];
