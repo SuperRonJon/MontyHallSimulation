@@ -29,7 +29,7 @@ public class Simulation {
 	}
 	
 	public void showStats() {
-		winPercentage = ((double)wins/iterations)* 100;
+		winPercentage = (double)wins/iterations;
 		
 		System.out.println("Wins: " + wins);
 		System.out.println("Losses: " + losses);
